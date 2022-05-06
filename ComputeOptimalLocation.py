@@ -6,7 +6,7 @@ def distanceDegreesToMeters(lat1, long1, lat2, long2):
     #formula used:
     #https://stackoverflow.com/questions/639695/how-to-convert-latitude-or-longitude-to-meters
 
-    RADIUS = 6378.137 #WGS-84 Earth equatorial radius (km)
+    RADIUS = 6378137 #WGS-84 Earth equatorial radius (m)
 
     deltaLat = (lat2 * pi / 180) - (lat1 * pi / 180)
     deltaLong = (long2 * pi / 180) - (long1 * pi * 180)
@@ -17,7 +17,7 @@ def distanceDegreesToMeters(lat1, long1, lat2, long2):
     
     d = RADIUS * c
 
-    return d * 1000
+    return d
 
 def weightDistance(distance):
     return (-1 * log(distance -10)) + 6.9
